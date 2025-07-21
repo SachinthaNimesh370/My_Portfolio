@@ -1,0 +1,47 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy over SSH to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ubuntu
+        key: ${{ secrets.SSH_KEY }}
+        port: 22
+        script: |
+          # Set working directory
+          PROJECT_DIR=~/portfolio
+
+          # If folder doesn't exist, clone the repo
+          if [ ! -d "$PROJECT_DIR/.git" ]; then
+            git clone https://github.com/SachinthaNimesh370/My_Portfolio.git $PROJECT_DIR
+          fi
+
+          # Navigate to project
+          cd $PROJECT_DIR
+
+          # Pull latest changes
+          git pull origin main
+
+          # Install and build
+          npm install
+          npm run build
+
+          # Ensure NGINX can serve the dist folder (Vite build assumed)
+          sudo chown -R www-data:www-data ./dist
+          sudo chmod -R 755 ./dist
+
+          # Optional: restart PM2 if using dynamic app (e.g., SSR)
+          # pm2 restart app || pm2 start npm --name "app" -- start
