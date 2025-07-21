@@ -45,17 +45,30 @@ jobs:
 
         #   # Optional: restart PM2 if using dynamic app (e.g., SSR)
         #   # pm2 restart app || pm2 start npm --name "app" -- start
+        # script: |
+        #   # Always clean and recreate the folder
+        #   rm -rf ~/portfolio
+        #   git clone https://github.com/SachinthaNimesh370/My_Portfolio.git ~/portfolio
+
+        #   cd ~/portfolio
+
+        #   npm install
+        #   npm run build
+
+        #   # Set proper permissions for Nginx to serve the build
+        #   sudo chown -R www-data:www-data ./dist
+        #   sudo chmod -R 755 ./dist
         script: |
-          # Always clean and recreate the folder
           rm -rf ~/portfolio
           git clone https://github.com/SachinthaNimesh370/My_Portfolio.git ~/portfolio
 
-          cd ~/portfolio
+          sudo chown -R ubuntu:ubuntu ~/portfolio
 
+          cd ~/portfolio
           npm install
           npm run build
 
-          # Set proper permissions for Nginx to serve the build
           sudo chown -R www-data:www-data ./dist
           sudo chmod -R 755 ./dist
+
 
