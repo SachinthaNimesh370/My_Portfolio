@@ -87,29 +87,22 @@ const About: React.FC = () => {
           >
             <div className="space-y-6">
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I'm S.P. Sachintha Nimesh, a Computer Engineering undergraduate at the University of Jaffna 
-                with an unwavering passion for software development and technology innovation. My journey in 
-                programming began with curiosity and has evolved into a deep commitment to creating impactful 
-                digital solutions.
+                Aspiring Software Engineer | Full-Stack Developer | Bsc Engineering (Hons) Computer Engineering | University Of Jaffna
               </p>
               
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                As an aspiring software engineer, I thrive on solving complex problems and learning new 
-                technologies. I've developed various projects ranging from web applications to mobile apps, 
-                always focusing on user experience and clean, maintainable code.
+                Third-year Computer Engineering undergraduate with a strong foundation in full-stack development and DevOps. Experienced in building scalable applications using Spring Boot, React, React Native, and MySQL, with additional skills in Docker, CI/CD pipelines, and AWS.
               </p>
               
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                Currently seeking a <span className="font-semibold text-blue-600 dark:text-blue-400">Software Engineering Internship</span> where I can contribute my skills, 
-                learn from experienced professionals, and grow as a developer. I believe in the power 
-                of technology to make a positive impact on people's lives.
+                Passionate about solving real-world problems through software and eager to contribute to impactful projects as a software engineering intern.
               </p>
             </div>
 
             {/* Personal Stats */}
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">20+</div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">10+</div>
                 <div className="text-gray-600 dark:text-gray-300">Projects Completed</div>
               </div>
               <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
