@@ -152,7 +152,7 @@ const Hero: React.FC = () => {
               
               <motion.a
                 href="/SachinthaNimeshCV.pdf"
-                download
+                download="SachinthaNimeshCV.pdf"
                 className="flex items-center gap-2 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
